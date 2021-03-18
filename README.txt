@@ -10,7 +10,7 @@ https://codingbee.net/powershell/powershell-make-a-permanent-change-to-the-path-
 
 To compile the files, go to the folder where you downloaded them and execute
 
-g++ -c cmd_minesweeper.exe Cell.cpp Grid.cpp Mat2D.cpp main.cpp
+g++ -c Cell.cpp Grid.cpp Mat2D.cpp main.cpp
 
 Then make the executable with
 
