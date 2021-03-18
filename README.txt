@@ -16,6 +16,6 @@ Then make the executable with
 
 g++ -o minesweeper.exe Cell.o Grid.o Mat2D.o Main.o
 
-Finally execute .\cmd_minesweeper.exe
+Finally execute .\minesweeper.exe
 
 HAVE FUN!!!
