@@ -39,7 +39,7 @@ class Grid
         void draw() const;
         std::unordered_set<Cell> cells_with_bombs;
         std::unordered_set<Cell> unrevealed_cells;
-
+        void reveal_all();
 };
 
 #endif // GRID_H

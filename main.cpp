@@ -76,6 +76,7 @@ void logic(Grid& grid)
 
     if (grid(x,y).is_bomb)
     {
+        grid.reveal_all();
         game_over = 1;
         return;
     }
@@ -102,7 +103,7 @@ void logic(Grid& grid)
     }
 }
 
-void exit()
+void message()
 {
     if(win)
         cout << "Seems like you are good!" << endl;
@@ -130,10 +131,6 @@ int main()
         clear_screen();
         Grid grid(DIFFICULTY.cols,DIFFICULTY.rows,DIFFICULTY.density);
         grid.init();
-
-
-        cout << grid.unrevealed_cells.size() << endl;
-
         while(!game_over)
         {
             printStats();
@@ -141,7 +138,8 @@ int main()
             logic(grid);
             clear_screen();
         }
-        exit();
+        grid.draw();
+        message();
         cout << "Play again? Press 1, otherwise exit with 0" << endl;
         do{
         scanf(" %c",&play_again);

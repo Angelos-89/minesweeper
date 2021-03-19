@@ -159,3 +159,15 @@ void Grid::draw() const
         cout << endl;
     }
 }
+
+void Grid::reveal_all()
+{
+    for(unsigned int row=0; row<g_rows; row++)
+    {
+        for(unsigned int col=0; col<g_cols; col++)
+        {
+            g_mat(col,row).reveal();
+        }
+    }
+}
+
