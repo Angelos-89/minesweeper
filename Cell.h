@@ -19,12 +19,12 @@ class Cell
         bool is_bomb;
         bool is_open;
         bool visited;
-        Cell(unsigned int xx=0, unsigned int yy=0);
-        friend bool operator==(const Cell& lhs, const Cell& rhs);
         void visit();
         void reveal();
         void hide();
         void setBomb();
+        Cell(unsigned int xx=0, unsigned int yy=0);
+        friend bool operator==(const Cell& lhs, const Cell& rhs);
 };
 
 #endif // CELL_H

@@ -32,14 +32,15 @@ class Grid
 
         Grid(unsigned int cols,unsigned int rows,double howDense);
         Cell& operator()(unsigned int i,unsigned int j);
-        void generateBombs();
-        std::vector<Cell> getNeighbors(Cell& center_cell) const;
-        void init();
-        Grid& reveal_all_zero_cells(unsigned int i, unsigned int j);
-        void draw() const;
         std::unordered_set<Cell> cells_with_bombs;
         std::unordered_set<Cell> unrevealed_cells;
+        std::vector<Cell> getNeighbors(Cell& center_cell) const;
+        Grid& reveal_all_zero_cells(unsigned int i, unsigned int j);
         void reveal_all();
+        void generateBombs();
+        void init();
+        void draw() const;
+
 };
 
 #endif // GRID_H

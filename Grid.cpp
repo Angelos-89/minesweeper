@@ -13,7 +13,6 @@ Cell& Grid::operator()(unsigned int i,unsigned int j)
 
 void Grid::generateBombs()
 {
-    //std::unordered_set<Cell> set_of_bombs = {};
     Cell cell;
     int grd_size = g_rows*g_cols;
     int total_bombs = grd_size*density;
@@ -24,7 +23,6 @@ void Grid::generateBombs()
         cell.position.y = rand()%(g_rows) + 1;
         cells_with_bombs.insert(cell);
     }
-    //return set_of_bombs;
 }
 
 std::vector<Cell> Grid::getNeighbors(Cell& center_cell) const
@@ -165,9 +163,7 @@ void Grid::reveal_all()
     for(unsigned int row=0; row<g_rows; row++)
     {
         for(unsigned int col=0; col<g_cols; col++)
-        {
             g_mat(col,row).reveal();
-        }
     }
 }
 
