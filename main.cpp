@@ -100,7 +100,6 @@ void logic(Grid& grid)
         game_over = 1;
         win = 1;
     }
-
 }
 
 void exit()
@@ -131,6 +130,10 @@ int main()
         clear_screen();
         Grid grid(DIFFICULTY.cols,DIFFICULTY.rows,DIFFICULTY.density);
         grid.init();
+
+
+        cout << grid.unrevealed_cells.size() << endl;
+
         while(!game_over)
         {
             printStats();

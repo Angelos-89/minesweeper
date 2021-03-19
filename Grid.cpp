@@ -50,7 +50,7 @@ void Grid::init()
 
     int ghost = g_mat.getGhost();
     generateBombs();
-    for(int row=-ghost; row< (int)g_rows+ghost; row++)
+    for(int row=-ghost; row<(int)g_rows+ghost; row++)
     {
         for(int col=-ghost; col<(int)g_cols+ghost; col++)
         {
@@ -80,8 +80,8 @@ void Grid::init()
                         number++;
                 }
                 g_mat(col,row).content = number + '0';
-                unrevealed_cells.insert(g_mat(col,row));
             }
+        unrevealed_cells.insert(g_mat(col,row));
         }
     }
 }
@@ -101,6 +101,7 @@ Grid& Grid::reveal_all_zero_cells(unsigned int i, unsigned int j)
         ii = c.position.x;
         jj = c.position.y;
         (*this)(ii,jj).reveal();
+        unrevealed_cells.erase((*this)(ii,jj));
     }
 
     // the chosen point is labeled as C
